@@ -30,8 +30,8 @@ errors = 0
 local_log.log('Uploading...')
 
 for dependency in dependencies:
-    result = upload_to_nexus.uploadDependency(dependency, url=nexusApi, user=user, password=password,
-                                              repository=repository)
+    result = upload_to_nexus.upload_dependency(dependency, url=nexusApi, user=user, password=password,
+                                               repository=repository)
     processed += 1
     if result.get('code') != 204:
         errors += 1

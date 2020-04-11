@@ -1,9 +1,10 @@
 import requests
 
-def uploadDependency(dependency,  url, user, password, repository='maven-releases'):
+
+def upload_dependency(dependency, url, user, password, repository='maven-releases'):
 
     if len(dependency) < 2:
-        return {'code': 0, 'msg': 'Dependência inválida. Deve possuir pelo menos o POM e o artefato.'}
+        return {'code': 0, 'msg': 'Invalid Dependency! The dependency needs at least the POM file and one artifact.'}
 
     params = (
         ('repository', repository),
@@ -37,6 +38,6 @@ def uploadDependency(dependency,  url, user, password, repository='maven-release
         files[f"maven2.asset{asset}.extension"] = (None, 'jar')
         files[f"maven2.asset{asset}.classifier"] = (None, 'javadoc')
 
-    result =  requests.post(url, params=params, auth=(user, password), files=files, verify=False)
+    result = requests.post(url, params=params, auth=(user, password), files=files, verify=False)
 
     return {'code': result.status_code, 'msg': result.text}
