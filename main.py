@@ -40,7 +40,7 @@ for dependency in dependencies:
         success += 1
     if processed % 10 == 0:
         local_log.log(
-            f"Progress {(processed / float(total)) * 100}%. Total processed: {processed} with {success} sucess and {errors} errors.")
+            f"Progress {(processed / float(total)) * 100}%. Total processed: {processed} with {success} success and {errors} errors.")
 
 if errors > 0:
     local_log.log(
