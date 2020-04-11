@@ -47,4 +47,4 @@ if errors > 0:
         f"Finished! {processed} dependencies were processed with {success} success and {errors} errors. "
         f"The details can be found in /logs.")
 else:
-    local_log.log(f"Finished! {processed} dependencies were processed with {success} success and {errors} errors")
+    local_log.log(f"Finished! {processed} dependencies were processed with {success} success and no errors.")
